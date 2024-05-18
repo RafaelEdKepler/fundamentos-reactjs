@@ -86,7 +86,7 @@ export function Post({ content, author, publishedAt }) {
           onChange={handleNewCommentChange}
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button disabled={!commentText} type="submit">Publicar</button>
         </footer>
       </form>
       <div className={styles.commentList}>

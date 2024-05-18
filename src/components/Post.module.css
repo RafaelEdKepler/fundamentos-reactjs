@@ -116,7 +116,12 @@
   max-height: 0;
 }
 
-.commentForm button[type=submit]:hover {
+.commentForm footer button[type=submit]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.commentForm button[type=submit]:not(:disabled):hover {
   background: var(--green-300);
 }
 
