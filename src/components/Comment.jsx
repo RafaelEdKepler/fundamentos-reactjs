@@ -2,9 +2,7 @@ import { ThumbsUp, Trash } from "phosphor-react";
 import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
 
-export function Comment({ comment }) {
-  console.log(comment);
-
+export function Comment({ content }) {
   return (
     <div
       className={styles.comment}
@@ -24,7 +22,7 @@ export function Comment({ comment }) {
               <Trash size={24} />
             </button>
           </header>
-          <p>{comment}</p>
+          <p>{content}</p>
         </div>
         <footer>
           <button>
