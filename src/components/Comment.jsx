@@ -1,11 +1,18 @@
 import { ThumbsUp, Trash } from "phosphor-react";
 import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
+import { useState } from "react";
 
 export function Comment({ content, onDeleteComment }) {
 
+  const [applause, setApplause] = useState(0);
+
   const handleDeleteComment = () => {
     onDeleteComment(content);
+  }
+
+  const handleNewApplause = () => {
+    setApplause(applause + 1);
   }
 
   return (
@@ -30,9 +37,11 @@ export function Comment({ content, onDeleteComment }) {
           <p>{content}</p>
         </div>
         <footer>
-          <button>
+          <button
+            onClick={handleNewApplause}
+          >
             <ThumbsUp size={20} />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{applause}</span>
           </button>
         </footer>
       </div>
